@@ -1,4 +1,4 @@
-# Gallery Saver Plusfor Flutter
+# Gallery Saver Plus for Flutter
 
 Saves images and videos from network or temporary file to external storage. Both
 images and videos will be visible in Android Gallery and iOS Photos.
