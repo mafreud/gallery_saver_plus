@@ -8,8 +8,6 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
 class GallerySaverPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
 
@@ -17,14 +15,12 @@ class GallerySaverPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     private var activity: Activity? = null
     private var gallerySaver: GallerySaver? = null
 
-    override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+    override fun onAttachedToEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(binding.binaryMessenger, "gallery_saver")
         channel.setMethodCallHandler(this)
-
-
     }
 
-    override fun onMethodCall(call: MethodCall, result: Result) {
+    override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
         when (call.method) {
             "saveImage" -> gallerySaver?.checkPermissionAndSaveFile(call, result, MediaType.image)
             "saveVideo" -> gallerySaver?.checkPermissionAndSaveFile(call, result, MediaType.video)
@@ -32,28 +28,28 @@ class GallerySaverPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         }
     }
 
-
-    override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+    override fun onAttachedToActivity(@NonNull binding: ActivityPluginBinding) {
         this.activity = binding.activity
         gallerySaver = GallerySaver(activity!!)
         binding.addRequestPermissionsResultListener(gallerySaver!!)
     }
 
-
     override fun onDetachedFromActivityForConfigChanges() {
-        print("onDetachedFromActivityForConfigChanges")
+        println("onDetachedFromActivityForConfigChanges")
     }
 
-    override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-        print("onReattachedToActivityForConfigChanges")
+    override fun onReattachedToActivityForConfigChanges(@NonNull binding: ActivityPluginBinding) {
+        this.activity = binding.activity
+        println("onReattachedToActivityForConfigChanges")
     }
 
     override fun onDetachedFromActivity() {
-        print("onDetachedFromActivity")
+        this.activity = null
+        gallerySaver = null
+        println("onDetachedFromActivity")
     }
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         channel.setMethodCallHandler(null)
-
     }
 }
