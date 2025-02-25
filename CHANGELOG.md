@@ -1,3 +1,7 @@
+## 3.2.2
+
+- fix build issues by @MertSaygili
+
 ## 3.2.1
 
 - fix: Issue while building apk for android by @Rishan99
