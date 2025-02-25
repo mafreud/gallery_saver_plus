@@ -1,28 +1,38 @@
-# Gallery Saver for Flutter
+# Gallery Saver Plusfor Flutter
 
-Saves images and videos from network or temporary file to external storage. 
-Both images and videos will be visible in Android Gallery and iOS Photos.
+Saves images and videos from network or temporary file to external storage. Both
+images and videos will be visible in Android Gallery and iOS Photos.
 
-NOTE: If you want to save network image or video link, it has to contain 'http/https' prefix.
-
+NOTE: If you want to save network image or video link, it has to contain
+'http/https' prefix.
 
 ## Installation
 
-First, add `gallery_saver_plus` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+First, add `gallery_saver_plus` as a dependency in your `pubspec.yaml`.
+
+Or
+
+```bash
+flutter pub add gallery_saver_plus
+```
 
 ### iOS
 
-Add the following keys to your _Info.plist_ file, located in `<project root>/ios/Runner/Info.plist`:
+Add the following keys to your `Info.plist` file, located in
+`<project root>/ios/Runner/Info.plist`:
 
-* `NSPhotoLibraryUsageDescription` - describe why your app needs permission for the photo library. This is called _Privacy - Photo Library Usage Description_ in the visual editor.
+- `NSPhotoLibraryUsageDescription` - describe why your app needs permission for
+  the photo library. This is called _Privacy - Photo Library Usage Description_
+  in the visual editor.
 
 ### Android
 
-* `android.permission.WRITE_EXTERNAL_STORAGE` - Permission for usage of external storage
+- `android.permission.WRITE_EXTERNAL_STORAGE` - Permission for usage of external
+  storage
 
 ### Example
 
-``` dart
+```dart
 import 'dart:io';
 
 import 'package:flutter/material.dart';

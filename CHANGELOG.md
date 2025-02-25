@@ -1,3 +1,7 @@
+## 3.2.3
+
+- Update README.md
+
 ## 3.2.2
 
 - fix build issues by @MertSaygili
