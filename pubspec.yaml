@@ -2,7 +2,7 @@ name: gallery_saver_plus
 description: Saves images and videos from network or temporary file to external
   storage. Both images and videos will be visible in Android Gallery and iOS
   Photos.
-version: 3.2.4
+version: 3.2.5
 homepage: https://github.com/mafreud/gallery_saver_plus
 
 environment:
