@@ -1,3 +1,8 @@
+## 3.2.5
+- Add support for AVIF formats by @cfsbhawkins
+- Update README.md
+- Update example
+
 ## 3.2.4
 
 - Update README.md
@@ -47,7 +52,7 @@
 
 ## 2.1.3
 
-- Example project build fix and .3gpp video type supprted
+- Example project build fix and .3gpp video type supported
 
 # 2.1.2
 
