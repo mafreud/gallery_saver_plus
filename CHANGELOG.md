@@ -1,3 +1,6 @@
+## 3.2.8
+- Refactor example
+
 ## 3.2.7
 - Update README.md
 
