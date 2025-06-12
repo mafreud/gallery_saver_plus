@@ -5,4 +5,4 @@
 .pub/
 .idea/
 
-build/
+build/example/ios/Flutter/Flutter.podspec
