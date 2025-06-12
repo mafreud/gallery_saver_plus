@@ -19,7 +19,7 @@ Add `gallery_saver_plus` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  gallery_saver_plus: ^3.2.6
+  gallery_saver_plus: latest
 ```
 
 Or install it from the command line:

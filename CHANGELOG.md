@@ -1,3 +1,11 @@
+## 3.2.7
+- Update README.md
+
+## 3.2.6
+
+- Update README.md
+- Update example
+
 ## 3.2.5
 - Add support for AVIF formats by @cfsbhawkins
 - Update README.md
